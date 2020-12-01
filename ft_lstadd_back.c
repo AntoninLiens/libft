@@ -6,7 +6,7 @@
 /*   By: aliens <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:00:16 by aliens            #+#    #+#             */
-/*   Updated: 2020/11/27 14:29:54 by aliens           ###   ########.fr       */
+/*   Updated: 2020/12/01 17:52:49 by aliens           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*lst2;
 
+	if (!lst || !new)
+		return ;
 	if (!*lst)
 	{
 		*lst = new;

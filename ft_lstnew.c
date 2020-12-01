@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aliens <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/26 16:20:04 by aliens            #+#    #+#             */
-/*   Updated: 2020/11/26 16:25:45 by aliens           ###   ########.fr       */
+/*   Created: 2020/11/26 17:17:05 by aliens            #+#    #+#             */
+/*   Updated: 2020/12/01 17:56:58 by aliens           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+t_list	*ft_lstnew(void *content)
 {
-	size_t	i;
+	t_list	*dst;
 
-	if (!s)
-		return ;
-	i = -1;
-	while (s[++i])
-		ft_putchar_fd(s[i], fd);
+	if (!(dst = malloc(sizeof(t_list))))
+		return (NULL);
+	dst->content = content;
+	dst->next = NULL;
+	return (dst);
 }

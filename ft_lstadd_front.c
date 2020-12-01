@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aliens <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/17 12:44:53 by aliens            #+#    #+#             */
-/*   Updated: 2020/11/19 11:43:50 by aliens           ###   ########.fr       */
+/*   Created: 2020/11/27 12:05:09 by aliens            #+#    #+#             */
+/*   Updated: 2020/12/01 17:48:54 by aliens           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (!((c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z') ||
-				(c >= 'a' && c <= 'z')))
-		return (0);
-	return (1);
+	if (!lst || !new)
+		return ;
+	new->next = *lst;
+	*lst = new;
 }

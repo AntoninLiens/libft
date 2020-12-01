@@ -6,7 +6,7 @@
 /*   By: aliens <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 17:23:37 by aliens            #+#    #+#             */
-/*   Updated: 2020/11/19 12:45:12 by aliens           ###   ########.fr       */
+/*   Updated: 2020/12/01 17:27:19 by aliens           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	char *petanque;
+	char *ptr;
 
-	petanque = (char *)s;
+	ptr = (char *)s;
 	if (n == 0)
 		return ;
 	while (n--)
-		petanque[n] = 0;
+		ptr[n] = 0;
 }
