@@ -6,7 +6,7 @@
 /*   By: aliens <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 17:45:08 by aliens            #+#    #+#             */
-/*   Updated: 2020/11/25 14:07:45 by aliens           ###   ########.fr       */
+/*   Updated: 2020/12/02 09:09:13 by aliens           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,11 @@ char		*ft_itoa(int n)
 	n2 = n < 0 ? -n : n;
 	if (!(dst = ft_calloc(sizeof(char), size + 1)))
 		return (NULL);
-	ft_memset(dst, '0', size);
 	if (!n)
+	{
+		dst[0] = '0';
 		return (dst);
+	}
 	while (size)
 	{
 		dst[size - 1] = n2 % 10 + '0';
