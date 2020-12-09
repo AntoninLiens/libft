@@ -6,15 +6,21 @@
 /*   By: aliens <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 15:52:43 by aliens            #+#    #+#             */
-/*   Updated: 2020/12/01 17:56:36 by aliens           ###   ########.fr       */
+/*   Updated: 2020/12/09 16:06:44 by aliens           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static void	ft_protect_free(t_list *lst)
+{
+	ft_iter(lst, free);
+}
+
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*lst2;
+	t_list	*lst3;
 	t_list	*dst;
 
 	if (!lst)
@@ -22,11 +28,15 @@ t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	if (!f)
 		return (lst);
 	dst = NULL;
+	lst3 = lst;
 	while (lst)
 	{
 		if (!(lst2 = ft_lstnew(f(lst->content))))
 		{
-			ft_lstclear(&lst, del);
+			if (!del)
+				ft_protect_free(lst3);
+			else
+				ft_lstclear(&lst, del);
 			return (NULL);
 		}
 		ft_lstadd_back(&dst, lst2);
