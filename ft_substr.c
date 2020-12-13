@@ -6,7 +6,7 @@
 /*   By: aliens <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:25:06 by aliens            #+#    #+#             */
-/*   Updated: 2020/11/26 12:48:11 by aliens           ###   ########.fr       */
+/*   Updated: 2020/12/13 16:18:48 by aliens           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 	size_t	j;
 
-	if (!(dst = ft_calloc(sizeof(char), len + 1)) || !s)
+	if (!(dst = (char *)ft_calloc(sizeof(char), len + 1)) || !s)
 		return (NULL);
 	i = -1;
 	j = -1;
