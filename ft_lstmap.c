@@ -6,7 +6,7 @@
 /*   By: aliens <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 15:52:43 by aliens            #+#    #+#             */
-/*   Updated: 2020/12/13 12:00:18 by aliens           ###   ########.fr       */
+/*   Updated: 2020/12/15 18:16:48 by aliens           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 static void	ft_protect_free(t_list *lst)
 {
 	ft_lstiter(lst, free);
+	free(lst);
 }
 
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
