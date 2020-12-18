@@ -6,7 +6,7 @@
 /*   By: aliens <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 15:52:43 by aliens            #+#    #+#             */
-/*   Updated: 2020/12/15 18:16:48 by aliens           ###   ########.fr       */
+/*   Updated: 2020/12/18 17:26:47 by aliens           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,12 @@ t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	if (!f)
 		return (lst);
 	dst = NULL;
-	lst3 = lst;
 	while (lst)
 	{
 		if (!(lst2 = ft_lstnew(f(lst->content))))
 		{
 			if (!del)
-				ft_protect_free(lst3);
+				ft_protect_free(lst2);
 			else
 				ft_lstclear(&lst, del);
 			return (NULL);
