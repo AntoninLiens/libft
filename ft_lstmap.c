@@ -37,7 +37,7 @@ t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		if (!(lst2 = ft_lstnew(f(lst->content))))
 		{
 			if (!del)
-				ft_protect_free(lst2);
+				ft_protect_free(&lst2);
 			else
 				ft_lstclear(&lst, del);
 			return (NULL);
