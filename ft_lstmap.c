@@ -6,15 +6,15 @@
 /*   By: aliens <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 15:52:43 by aliens            #+#    #+#             */
-/*   Updated: 2020/12/28 17:18:20 by aliens           ###   ########.fr       */
+/*   Updated: 2020/12/28 17:47:05 by aliens           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	ft_protect_free(t_list *lst)
+static void	ft_protect_free(t_list **lst)
 {
-	t_list	tmp;
+	t_list	*tmp;
 
 	while (*lst)
 	{
