@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aliens <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: aliens <aliens@students.s19.be>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 16:27:17 by aliens            #+#    #+#             */
-/*   Updated: 2020/12/28 18:16:47 by aliens           ###   ########.fr       */
+/*   Updated: 2021/03/18 17:46:00 by aliens           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	ft_atoi(const char *str)
 		num2 = num;
 		num = num * 10 + (str[i] - '0');
 		if (num >= LLONG_MAX || num < num2)
-			return (sign == 1 ? -1 : 0);
+			return (ternarint(sign, 0, 1));
 		i++;
 	}
 	return (num * sign);

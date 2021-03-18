@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aliens <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: aliens <aliens@students.s19.be>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 15:52:43 by aliens            #+#    #+#             */
-/*   Updated: 2020/12/28 18:20:22 by aliens           ###   ########.fr       */
+/*   Updated: 2021/03/18 14:41:55 by aliens           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	ft_protect_free(t_list **lst)
 	}
 }
 
-t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*lst2;
 	t_list	*dst;
@@ -34,7 +34,8 @@ t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	dst = NULL;
 	while (lst)
 	{
-		if (!(lst2 = ft_lstnew(f(lst->content))))
+		lst2 = ft_lstnew(f(lst->content));
+		if (!lst2)
 		{
 			if (!del)
 				ft_protect_free(&lst2);

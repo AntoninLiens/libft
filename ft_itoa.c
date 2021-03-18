@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aliens <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: aliens <aliens@students.s19.be>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 17:45:08 by aliens            #+#    #+#             */
-/*   Updated: 2020/12/28 18:19:27 by aliens           ###   ########.fr       */
+/*   Updated: 2021/03/18 17:45:27 by aliens           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,16 @@ static int	ft_size(int n, int a)
 		return (ft_size(n / 10, a + 1));
 }
 
-char		*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	int				size;
 	unsigned int	n2;
 	char			*dst;
 
-	size = n ? ft_size(n, 0) : 1;
-	n2 = n < 0 ? -n : n;
-	if (!(dst = (char *)ft_calloc(sizeof(char), size + 1)))
+	size = ternarint(n, ft_size(n, 0), 1);
+	n2 = ternarint(n < 0, -n, n);
+	dst = (char *)ft_calloc(sizeof(char), size + 1);
+	if (!dst)
 		return (NULL);
 	ft_memset(dst, '0', size);
 	if (!n)

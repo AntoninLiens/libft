@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: aliens <marvin@42.fr>                      +#+  +:+       +#+         #
+#    By: aliens <aliens@students.s19.be>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/18 16:23:35 by aliens            #+#    #+#              #
-#    Updated: 2020/12/28 18:30:29 by aliens           ###   ########.fr        #
+#    Updated: 2021/03/18 17:43:39 by aliens           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,8 +48,9 @@ SRCS		=	ft_atoi.c\
 				ft_split.c\
 				ft_strlcat.c\
 				ft_strncmp.c\
-				ft_substr.c
-
+				ft_substr.c\
+				ft_ternaries.c
+				
 SRCS_BONUS	=	ft_lstadd_back.c\
 				ft_lstclear.c\
 				ft_lstiter.c\

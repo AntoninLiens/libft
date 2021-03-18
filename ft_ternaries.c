@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_ternaries.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aliens <aliens@students.s19.be>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/26 17:17:05 by aliens            #+#    #+#             */
-/*   Updated: 2021/03/18 14:42:50 by aliens           ###   ########.fr       */
+/*   Created: 2021/03/18 17:41:27 by aliens            #+#    #+#             */
+/*   Updated: 2021/03/18 17:46:59 by aliens           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+int	ternarint(int a, int b, int c)
 {
-	t_list	*dst;
-
-	dst = (t_list *)malloc(sizeof(t_list));
-	if (!dst)
-		return (NULL);
-	dst->content = content;
-	dst->next = NULL;
-	return (dst);
+	if (a)
+		return (b);
+	return (c);
 }

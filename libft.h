@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aliens <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: aliens <aliens@students.s19.be>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 11:23:42 by aliens            #+#    #+#             */
-/*   Updated: 2020/12/28 18:30:25 by aliens           ###   ########.fr       */
+/*   Updated: 2021/03/18 17:46:27 by aliens           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,13 @@
 # include <limits.h>
 # include <stdlib.h>
 
-typedef struct	s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }				t_list;
+
+int				ternarint(int a, int b, int c);
 
 int				ft_isalnum(int c);
 int				ft_isalpha(int c);
@@ -46,8 +48,8 @@ int				ft_toupper(int c);
 int				ft_atoi(const char *str);
 char			*ft_strchr(const char *s, int c);
 char			*ft_strrchr(const char *s, int c);
-char			*ft_strnstr \
-					(const char *haystack, const char *needle, size_t len);
+char			*ft_strnstr(const char *haystack,
+					const char *needle, size_t len);
 
 void			*ft_calloc(size_t count, size_t size);
 char			*ft_strdup(const char *s1);
@@ -72,7 +74,7 @@ void			ft_lstclear(t_list **lst, void (*del)(void *));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstnew(void *content);
 t_list			*ft_lstlast(t_list *lst);
-t_list			*ft_lstmap \
-					(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
+					void (*del)(void *));
 
 #endif
