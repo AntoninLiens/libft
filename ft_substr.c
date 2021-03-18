@@ -6,7 +6,7 @@
 /*   By: aliens <aliens@students.s19.be>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:25:06 by aliens            #+#    #+#             */
-/*   Updated: 2021/03/18 15:03:55 by aliens           ###   ########.fr       */
+/*   Updated: 2021/03/18 18:05:34 by aliens           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (!s)
 		return (NULL);
-	if (len < ft_strlen(s) - start + 1)
-		len = (ft_strlen(s) - start);
+	len = ternarint(len > ft_strlen(s) - start + 1, ft_strlen(s) - start, len);
 	if (ft_strlen(s) < start)
 	{
 		dst = (char *)ft_calloc(sizeof(char), 1);
